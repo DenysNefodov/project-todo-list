@@ -1,21 +1,22 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+
 
 function TodoForm(props) {
-    const [input, setInput] = useState('')
+    const [input, setInput] = useState('');
 
     const handleChange = e => {
-        setInput(e.target.value)
-    }
+        setInput(e.target.value);
+    };
 
     const handleSubmit = e => {
-        e.preventDefault()
+        e.preventDefault();
 
         props.onSubmit({
-            id:Math.floor(Math.random() * 10000),
+            id: Math.floor(Math.random() * 10000),
             text: input
-        })
+        });
 
-        setInput('')
+        setInput('');
     }
 
     return (
@@ -30,7 +31,7 @@ function TodoForm(props) {
             />
             <button className="todo-button">Add todo</button>
         </form>
-    )
-}
+    );
+};
 
-export default TodoForm
+export default TodoForm;
